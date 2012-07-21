@@ -12,7 +12,15 @@
 - (NSString *)applicationSupportDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex: 0] : NSTemporaryDirectory();
-    return [basePath stringByAppendingPathComponent:@"On Task"];
+	NSString *applicationSupportPath = [basePath stringByAppendingPathComponent:@"On Task"];
+	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:applicationSupportPath]) {
+		if (![[NSFileManager defaultManager] createDirectoryAtPath:applicationSupportPath attributes:nil]) {
+			NSLog(@"Error: Could not create folder %@", applicationSupportPath);
+		}
+	}
+	
+    return applicationSupportPath;
 }
 
 @end
