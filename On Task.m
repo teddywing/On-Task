@@ -55,6 +55,7 @@ int main (int argc, const char * argv[]) {
 		[log_f writeData:[[NSString stringWithString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 	}
 	[log_f writeData:[[date stringByAppendingString:@": "] dataUsingEncoding:NSUTF8StringEncoding]]; // Write date stamp
+	[log_f closeFile];
 	
 	[[NSWorkspace sharedWorkspace] openFile:logPath withApplication:@"TextEdit"];
 	
