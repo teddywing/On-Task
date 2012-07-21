@@ -14,6 +14,7 @@
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex: 0] : NSTemporaryDirectory();
 	NSString *applicationSupportPath = [basePath stringByAppendingPathComponent:@"On Task"];
 	
+	// If our Application Support directory doesn't exist yet then create it
 	if (![[NSFileManager defaultManager] fileExistsAtPath:applicationSupportPath]) {
 		if (![[NSFileManager defaultManager] createDirectoryAtPath:applicationSupportPath attributes:nil]) {
 			NSLog(@"Error: Could not create folder %@", applicationSupportPath);
