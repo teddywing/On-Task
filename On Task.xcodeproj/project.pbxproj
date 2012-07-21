@@ -12,6 +12,7 @@
 		8DD76F9F0486AA7600D96B5E /* On Task.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* On Task.1 */; };
 		D17EB4E115BA572600A0FB10 /* NSFileManager+DirectoryLocations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D17EB4DF15BA572600A0FB10 /* NSFileManager+DirectoryLocations.h */; };
 		D17EB4E215BA572600A0FB10 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = D17EB4E015BA572600A0FB10 /* NSFileManager+DirectoryLocations.m */; };
+		D18C272A15BA6FC0007BE5BA /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18C272915BA6FC0007BE5BA /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,7 @@
 		C6859EA3029092ED04C91782 /* On Task.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = "On Task.1"; sourceTree = "<group>"; };
 		D17EB4DF15BA572600A0FB10 /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+DirectoryLocations.h"; path = "Classes/NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
 		D17EB4E015BA572600A0FB10 /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+DirectoryLocations.m"; path = "Classes/NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
+		D18C272915BA6FC0007BE5BA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
+				D18C272A15BA6FC0007BE5BA /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +78,7 @@
 		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D18C272915BA6FC0007BE5BA /* AppKit.framework */,
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
 			);
 			name = "External Frameworks and Libraries";
