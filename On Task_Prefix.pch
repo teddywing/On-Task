@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'On Task' target in the 'On Task' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
