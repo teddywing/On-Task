@@ -12,7 +12,8 @@ int main (int argc, const char * argv[]) {
 	[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehavior10_4];
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setDateFormat:@"yyyyMMddHHmmss"];
-	NSString *date = [df stringFromDate:[NSDate date]];
+	NSDate *now = [NSDate date];
+	NSString *date = [df stringFromDate:now];
 	
     // # Take screenshot
 	// Make screenshots directory if needed
@@ -40,7 +41,25 @@ int main (int argc, const char * argv[]) {
 	
 	
 	// # Open text log
+	[df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+	date = [df stringFromDate:now];
+	NSString *logPath = [applicationSupportPath stringByAppendingString:@"/On Task Log.txt"];
 	
+	NSFileHandle *log_f = [NSFileHandle fileHandleForUpdatingAtPath:logPath];
+	if (log_f == nil) {
+		[[NSFileManager defaultManager] createFileAtPath:logPath contents:nil attributes:nil];
+		log_f = [NSFileHandle fileHandleForUpdatingAtPath:logPath];
+	}
+	else {
+		[log_f seekToEndOfFile];
+		[log_f writeData:[[NSString stringWithString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	}
+	[log_f writeData:[[date stringByAppendingString:@": "] dataUsingEncoding:NSUTF8StringEncoding]]; // Write date stamp
+	
+	[[NSWorkspace sharedWorkspace] openFile:logPath withApplication:@"TextEdit"];
+	
+	
+	// Cleanup
 	[df release];
 	
     [pool release];
