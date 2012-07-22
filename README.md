@@ -24,9 +24,7 @@ The background process should then start and On Task will come up every so often
 
 To turn On Task off (stop it from running at intervals), then run the following:
 
-    `launchctl stop com.teddywing.OnTask`
-
-Additionally, you can run `launchctl unload ~/Library/LaunchAgents/com.teddywing.OnTask.plist` so that the program doesn't start again on your next login session.
+    `launchctl unload ~/Library/LaunchAgents/com.teddywing.OnTask.plist`
 
 
 ## Uninstalling
