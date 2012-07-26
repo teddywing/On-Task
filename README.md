@@ -18,7 +18,6 @@ On Task was written and tested on Mac OS X 10.4.11. I have not tested it on any 
 1. Build using Xcode and put the OnTask executable in `/usr/local/bin/`.
 2. Put the `com.teddywing.OnTask.plist` file in your `~/Library/LaunchAgents/` directory
 3. Fire up a Terminal and run `launchctl load ~/Library/LaunchAgents/com.teddywing.OnTask.plist`
-4. Then run `launchctl start com.teddywing.OnTask`
 
 The background process should then start and On Task will come up every so often. If you start getting annoyed, feel free to change the `StartInterval` value in the plist, which defines how often On Task should run. If you change the plist you'll need to reload it using `launchctl` using the instructions below.
 
@@ -26,13 +25,21 @@ To turn On Task off (stop it from running at intervals), then run the following:
 
     `launchctl unload ~/Library/LaunchAgents/com.teddywing.OnTask.plist`
 
+On Task will start up again on your next login if you leave the .plist file in your LaunchAgents directory.
+
+
+## Turning it on and off
+
+As a convenience, a Terminal command file is provided (bash script) to turn On Task on and off. Just double-click on the "OnTask toggle on-off.command" file, and On Task will switch on or off. This script will also install the launchd .plist file in your LaunchAgents directory so you don't have to do it manually.
+
 
 ## Uninstalling
 
-1. If On Task is still running periodically, run `launchctl stop com.teddywing.OnTask`
+1. Just in case, run `launchctl stop com.teddywing.OnTask`
 2. Then run `launchctl unload ~/Library/LaunchAgents/com.teddywing.OnTask.plist` to remove it from your LaunchAgents list
 3. Delete the `com.teddywing.OnTask.plist` file
 4. Delete the OnTask executable
+5. Take the data in `~/Application Support/On Task` and save anywhere you want.
 
 
 ## File spam
