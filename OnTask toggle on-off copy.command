@@ -50,6 +50,8 @@ if [ -a ~/Library/LaunchAgents/com.teddywing.OnTask.plist ]; then
   launchctl unload ~/Library/LaunchAgents/com.teddywing.OnTask.plist
   
   mv ~/Library/LaunchAgents/com.teddywing.OnTask.plist ~/Library/Application\ Support/On\ Task/
+  
+  echo "On Task DEACTIVATED"
 elif [ -a ~/Library/Application\ Support/On\ Task/com.teddywing.OnTask.plist ]; then
   # otherwise, if we find the plist in the On Task Application Support directory
   # then move it to the user's LaunchAgents directory
@@ -57,10 +59,14 @@ elif [ -a ~/Library/Application\ Support/On\ Task/com.teddywing.OnTask.plist ]; 
   
   # and load it into launchd
   launchctl load ~/Library/LaunchAgents/com.teddywing.OnTask.plist
+  
+  echo "On Task ACTIVATED"
 else
   # if neither of those, create a new LaunchAgent plist file with default text
   echo "$ON_TASK_PLIST_TEXT" > ~/Library/LaunchAgents/com.teddywing.OnTask.plist
   
   # and load it into launchd
   launchctl load ~/Library/LaunchAgents/com.teddywing.OnTask.plist
+  
+  echo "On Task INSTALLED & ACTIVATED"
 fi
